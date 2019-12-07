@@ -1,0 +1,21 @@
+{
+  "name": "DynamicHistogram",
+  "version": "1.0.0",
+  "description": "动态柱状图可视化",
+  "main": "index.js",
+  "repository": "https://github.com/sikazhang/DynamicHistogram.git",
+  "author": "sikazhang",
+  "license": "MIT",
+  "scripts": {
+    "publish": "npm run compile && npm run changelog",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "compile": "rimraf dist && npx babel src --source-maps --out-dir dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.5",
+    "conventional-changelog": "^3.1.15",
+    "rimraf": "^3.0.0"
+  }
+}
