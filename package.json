@@ -9,13 +9,25 @@
   "scripts": {
     "publish": "npm run compile && npm run changelog",
     "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "compile": "rimraf dist && npx babel src --source-maps --out-dir dist"
+    "compile": "rimraf dist && npx babel src --source-maps --out-dir dist",
+    "dev": "npx webpack-dev-server --host localhost --port 9000 --inline true --hot true",
+    "serve": "yarn build && npx serve -s ./examples -p 9999",
+    "build": "npx webpack"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.5",
     "conventional-changelog": "^3.1.15",
-    "rimraf": "^3.0.0"
+    "css-loader": "^3.2.1",
+    "rimraf": "^3.0.0",
+    "serve": "^11.2.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "d3.js": "^0.0.2-security"
   }
 }
