@@ -181,12 +181,19 @@ class Histogram {
             .transition()
             .duration(2950 * DEFAULT_CONFIG.intervalTime)
             .tween("text_tween", d => {
-                // let textContent = this.document.querySelectorAll('.value')[0].textContent;
-                // textContent = d.value * 0.8;
-                // let i = d3.interpolateRound(d.value * 0.8,d.value);
-                // return t => {
-                //     textContent=i(t);
-                // }
+                let query = this.document.querySelectorAll('.value')
+                let arr = Array.from(query);
+                let searchIndex;
+                arr.map((item, index) => {
+                    if (item.__data__.name === d.name) {
+                        searchIndex = index
+                    }
+                });
+                this.document.querySelectorAll('.value')[searchIndex].textContent = d.value * 0.8;
+                let i=d3.interpolateRound(this.document.querySelectorAll('.value')[searchIndex].textContent, d.value);
+                return t => {
+                    this.document.querySelectorAll('.value')[searchIndex].textContent = i(t);
+                }
             })
             .attr('x', d=> {
                 // 根据数字大小计算x坐标（每个数字大概10px）
@@ -226,11 +233,19 @@ class Histogram {
         barUpdate.select('.value')
             .style('fill',d => this.colors[d.name])
             .tween("text_tween", d => {
-                // let textContent = this.document.querySelectorAll('.value')[0].textContent;
-                // let i=d3.interpolateRound(textContent, d.value);
-                // return t => {
-                //     textContent = i(t);
-                // }
+                let query = this.document.querySelectorAll('.value')
+                let arr = Array.from(query);
+                let searchIndex;
+                arr.map((item, index) => {
+                    if (item.__data__.name === d.name) {
+                        searchIndex = index
+                    }
+                });
+                this.document.querySelectorAll('.value')[searchIndex].textContent = d.value * 0.8;
+                let i=d3.interpolateRound(this.document.querySelectorAll('.value')[searchIndex].textContent, d.value);
+                return t => {
+                    this.document.querySelectorAll('.value')[searchIndex].textContent = i(t);
+                }
             })
             .attr('x', d => {
                 // 根据数字大小计算x坐标（每个数字大概10px）
