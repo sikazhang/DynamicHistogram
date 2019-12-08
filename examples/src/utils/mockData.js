@@ -1,4 +1,4 @@
+const arr = [{'name':'条目','type':'Chinese','value':'41243','date':'2019-01-01'},{'name':'条目','type':'Chinese','value':'11243','date':'2019-01-02'},{'name':'条目','type':'Chinese','value':'51243','date':'2019-01-03'},{'name':'エントリ','type':'Japanese','value':'12412','date':'2019-01-03'},{'name':'エントリ','type':'Japanese','value':'43343','date':'2019-01-01'},{'name':'エントリ','type':'Japanese','value':'34645','date':'2019-01-02'},{'name':'Запись','type':'Russian','value':'12312','date':'2019-01-01'},{'name':'Запись','type':'Russian','value':'2231231232','date':'2019-01-02'},{'name':'Запись','type':'Russian','value':'32312','date':'2019-01-03'},{'name':'Item','type':'English','value':'21412','date':'2019-01-01'},{'name':'Item','type':'English','value':'61412','date':'2019-01-02'},{'name':'Item','type':'English','value':'11412','date':'2019-01-03'},{'name':'조목','type':'Korean','value':'24124','date':'2019-01-01'},{'name':'조목','type':'Korean','value':'23123','date':'2019-01-02'},{'name':'조목','type':'Korean','value':'12311','date':'2019-01-03'}]
 
-import mock from './mock.csv';
 
-export default mock;
+export default arr;
